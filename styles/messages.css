@@ -98,10 +98,10 @@
 
 /* -- Outreterre : toile, lueur pulsée -- */
 .ms-card.ms-theme-drow .ms-web { position: absolute; top: 0; left: 0; width: 90px; height: 90px; color: rgba(210, 160, 255, .35); pointer-events: none; }
-.ms-card.ms-theme-drow { animation: ms-faerzress 3s ease-in-out infinite alternate; }
+.ms-card.ms-theme-drow::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 34px rgba(190, 100, 255, .45); opacity: .2; will-change: opacity; animation: ms-faerzress 3s steps(36) infinite alternate; }
 .ms-card.ms-theme-drow .ms-kicker { justify-content: center; text-shadow: 0 0 10px rgba(213, 140, 255, .8); font-size: 1.15rem; }
 .ms-card.ms-theme-drow .ms-body { font-size: 1.1rem; text-align: center; font-style: italic; }
-@keyframes ms-faerzress { from { box-shadow: 0 18px 44px rgba(0,0,0,.7), 0 0 20px rgba(180, 80, 255, .25); } to { box-shadow: 0 18px 44px rgba(0,0,0,.7), 0 0 44px rgba(180, 80, 255, .55); } }
+@keyframes ms-faerzress { to { opacity: 1; } }
 
 /* -- Télégramme 1933 : bandeaux collés, en-tête de compagnie -- */
 .ms-card.ms-theme-ny1933 .ms-kicker { flex-direction: column; justify-content: center; gap: 2px; font-size: 1.5rem; color: #2a2214; letter-spacing: .12em; text-transform: uppercase; border-bottom: 3px double #2a2214; padding-bottom: 6px; }

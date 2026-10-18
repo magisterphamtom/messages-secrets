@@ -310,18 +310,28 @@ export class MessageApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const ta = el.querySelector("textarea");
     ta?.focus();
     ta?.addEventListener("keydown", (ev) => {
-      if (ev.key === "Enter" && (ev.ctrlKey || ev.metaKey)) { ev.preventDefault(); el.requestSubmit?.() ?? el.querySelector('button[type="submit"]')?.click(); }
+      if (ev.key === "Enter" && (ev.ctrlKey || ev.metaKey) && !ev.repeat) {
+        ev.preventDefault();
+        if (typeof el.requestSubmit === "function") el.requestSubmit();
+        else el.querySelector('button[type="submit"]')?.click();
+      }
     });
     el.querySelector("[name=theme]")?.addEventListener("change", (ev) => game.settings.set(ID, "theme", ev.target.value));
     el.querySelector("[name=place]")?.addEventListener("change", (ev) => game.settings.set(ID, "place", ev.target.value));
   }
 
   static async #onSubmit(event, form) {
+    if (this._sending) return;          // un seul envoi à la fois (double-clic, Ctrl+Entrée répété)
+    this._sending = true;
+    try {
     const to = [...form.querySelectorAll('input[name="to"]:checked')].map((i) => i.value);
     const text = form.querySelector("textarea")?.value ?? "";
     this.to = to;
     const ok = await send({ to, text, replyTo: this.replyTo });
     if (ok) this.close();
+    } finally {
+      this._sending = false;
+    }
   }
 
   static #all(ev, target) {

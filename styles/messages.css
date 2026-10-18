@@ -1,0 +1,166 @@
+/* Messages secrets — magisterphamtom — MIT */
+@font-face { font-family: "MS Inter"; src: url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "MS Inter"; src: url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "MS Rajdhani"; src: url("../fonts/Rajdhani-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "MS Rajdhani"; src: url("../fonts/Rajdhani-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "MS Typewriter"; src: url("../fonts/SpecialElite.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "MS Fell"; src: url("../fonts/IMFellEnglish.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "MS Fell"; src: url("../fonts/IMFellEnglish-Italic.woff2") format("woff2"); font-style: italic; font-display: swap; }
+@font-face { font-family: "MS Limelight"; src: url("../fonts/Limelight.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "MS Cinzel Deco"; src: url("../fonts/CinzelDecorative-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "MS Cinzel"; src: url("../fonts/Cinzel-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "MS Garamond"; src: url("../fonts/EBGaramond-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "MS Garamond"; src: url("../fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; font-display: swap; }
+
+/* =================================================================== */
+/*  Variables par habillage (carte reçue, fenêtre, chat)                */
+/* =================================================================== */
+
+.ms-theme-generique {
+  --ms-bg: linear-gradient(160deg, rgba(30, 38, 50, .96), rgba(14, 18, 25, .97));
+  --ms-border: 1px solid rgba(245, 166, 35, .55); --ms-radius: 14px;
+  --ms-ink: #e9eef5; --ms-muted: #9fb0c3; --ms-accent: #f5a623;
+  --ms-font: "MS Inter", system-ui, sans-serif; --ms-head-font: "MS Inter", sans-serif;
+  --ms-btn-bg: rgba(245, 166, 35, .12); --ms-btn-ink: #f5c26b; --ms-btn-border: 1px solid rgba(245, 166, 35, .5);
+  --ms-shadow: 0 18px 40px rgba(0,0,0,.55), 0 0 30px rgba(245, 166, 35, .12);
+}
+.ms-theme-drow {
+  --ms-bg: radial-gradient(ellipse at 20% 0%, rgba(160, 60, 220, .28), transparent 55%), radial-gradient(ellipse at 100% 100%, rgba(60, 20, 120, .5), transparent 60%), linear-gradient(170deg, #160b22, #08040e);
+  --ms-border: 1px solid rgba(190, 110, 255, .6); --ms-radius: 4px;
+  --ms-ink: #e6d8f5; --ms-muted: #a58cc4; --ms-accent: #d58cff;
+  --ms-font: "MS Garamond", serif; --ms-head-font: "MS Cinzel Deco", "MS Cinzel", serif;
+  --ms-btn-bg: linear-gradient(180deg, rgba(150, 70, 220, .35), rgba(70, 20, 120, .55)); --ms-btn-ink: #f2e4ff; --ms-btn-border: 1px solid rgba(210, 150, 255, .6);
+  --ms-shadow: 0 18px 44px rgba(0,0,0,.7), 0 0 34px rgba(180, 80, 255, .35);
+}
+.ms-theme-ny1933 {
+  --ms-bg: repeating-linear-gradient(0deg, rgba(120, 90, 30, .05) 0 2px, transparent 2px 5px), linear-gradient(180deg, #f6e7b4, #ecd793);
+  --ms-border: 1px solid #a8862f; --ms-radius: 2px;
+  --ms-ink: #2a2214; --ms-muted: #6d5a2e; --ms-accent: #8a1c12;
+  --ms-font: "MS Typewriter", "Courier New", monospace; --ms-head-font: "MS Limelight", serif;
+  --ms-btn-bg: #2a2214; --ms-btn-ink: #f6e7b4; --ms-btn-border: 1px solid #2a2214;
+  --ms-shadow: 0 16px 34px rgba(0,0,0,.55);
+}
+.ms-theme-ant1933 {
+  --ms-bg: radial-gradient(ellipse at 100% 0%, rgba(255,255,255,.7), transparent 45%), repeating-linear-gradient(0deg, transparent 0 25px, rgba(60, 110, 160, .16) 25px 26px), linear-gradient(180deg, #eef3f6, #dbe5ec);
+  --ms-border: 1px solid #8fa9bd; --ms-radius: 2px;
+  --ms-ink: #1d3557; --ms-muted: #5b7690; --ms-accent: #23466e;
+  --ms-font: "MS Fell", Georgia, serif; --ms-head-font: "MS Typewriter", monospace;
+  --ms-btn-bg: #1d3557; --ms-btn-ink: #eef3f6; --ms-btn-border: 1px solid #1d3557;
+  --ms-shadow: 0 16px 34px rgba(0,0,0,.5), inset 0 0 30px rgba(140, 180, 210, .35);
+}
+.ms-theme-ny2026 {
+  --ms-bg: rgba(28, 28, 32, .94); --ms-border: 1px solid rgba(255,255,255,.12); --ms-radius: 22px;
+  --ms-ink: #f2f2f5; --ms-muted: #9a9aa4; --ms-accent: #2f8cff;
+  --ms-font: "MS Inter", system-ui, sans-serif; --ms-head-font: "MS Inter", sans-serif;
+  --ms-btn-bg: rgba(255,255,255,.08); --ms-btn-ink: #4aa3ff; --ms-btn-border: 0;
+  --ms-shadow: 0 18px 40px rgba(0,0,0,.6);
+}
+.ms-theme-ant2026 {
+  --ms-bg: linear-gradient(rgba(30, 60, 90, .06) 1px, transparent 1px) 0 0 / 18px 18px, linear-gradient(90deg, rgba(30, 60, 90, .06) 1px, transparent 1px) 0 0 / 18px 18px, #f4f7fa;
+  --ms-border: 2px solid #ff6a13; --ms-radius: 6px;
+  --ms-ink: #14212e; --ms-muted: #5a6b7c; --ms-accent: #ff6a13;
+  --ms-font: "MS Inter", sans-serif; --ms-head-font: "MS Rajdhani", sans-serif;
+  --ms-btn-bg: #14212e; --ms-btn-ink: #fff; --ms-btn-border: 0;
+  --ms-shadow: 0 16px 34px rgba(0,0,0,.45);
+}
+
+/* =================================================================== */
+/*  Cartes reçues                                                       */
+/* =================================================================== */
+
+#ms-inbox { position: fixed; top: 70px; right: 330px; z-index: 9000; display: flex; flex-direction: column; gap: 12px; width: min(380px, 80vw); pointer-events: none; }
+.ms-card {
+  position: relative; overflow: hidden; pointer-events: auto;
+  background: var(--ms-bg); border: var(--ms-border); border-radius: var(--ms-radius);
+  color: var(--ms-ink); font-family: var(--ms-font); box-shadow: var(--ms-shadow);
+  transform: translateX(40px) scale(.96); opacity: 0; transition: transform .45s cubic-bezier(.2,.9,.3,1.2), opacity .35s;
+}
+.ms-card.ms-in { transform: none; opacity: 1; }
+.ms-card.ms-out { transform: translateX(30px); opacity: 0; transition-duration: .3s; }
+.ms-head { padding: 12px 16px 8px; }
+.ms-kicker { font-family: var(--ms-head-font); color: var(--ms-accent); font-size: 1.05rem; letter-spacing: .04em; display: flex; align-items: center; gap: 8px; }
+.ms-from { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: .92rem; }
+.ms-from > div { flex: 1; min-width: 0; }
+.ms-from small { color: var(--ms-muted); }
+.ms-from time { color: var(--ms-muted); font-size: .8rem; }
+.ms-label { color: var(--ms-muted); font-size: .8em; }
+.ms-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ms-accent); flex: 0 0 38px; display: grid; place-items: center; background: rgba(0,0,0,.25); color: var(--ms-accent); }
+.ms-body { padding: 4px 16px 12px; font-size: 1.02rem; line-height: 1.5; white-space: normal; word-wrap: break-word; max-height: 40vh; overflow: auto; }
+.ms-foot { display: flex; gap: 8px; justify-content: flex-end; padding: 0 14px 14px; }
+.ms-foot button, .ms-compose-foot button {
+  width: auto; flex: 0 0 auto; height: 32px; padding: 0 14px; cursor: pointer; line-height: 1;
+  background: var(--ms-btn-bg); color: var(--ms-btn-ink); border: var(--ms-btn-border); border-radius: calc(var(--ms-radius) / 2 + 2px);
+  font-family: var(--ms-head-font); font-size: .85rem; box-shadow: none;
+}
+.ms-foot button:hover, .ms-compose-foot button:hover { filter: brightness(1.15); }
+.ms-app { display: flex; align-items: center; gap: 6px; font-size: .72rem; color: var(--ms-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
+.ms-app span { margin-left: auto; text-transform: none; }
+
+/* -- Outreterre : toile, lueur pulsée -- */
+.ms-card.ms-theme-drow .ms-web { position: absolute; top: 0; left: 0; width: 90px; height: 90px; color: rgba(210, 160, 255, .35); pointer-events: none; }
+.ms-card.ms-theme-drow { animation: ms-faerzress 3s ease-in-out infinite alternate; }
+.ms-card.ms-theme-drow .ms-kicker { justify-content: center; text-shadow: 0 0 10px rgba(213, 140, 255, .8); font-size: 1.15rem; }
+.ms-card.ms-theme-drow .ms-body { font-size: 1.1rem; text-align: center; font-style: italic; }
+@keyframes ms-faerzress { from { box-shadow: 0 18px 44px rgba(0,0,0,.7), 0 0 20px rgba(180, 80, 255, .25); } to { box-shadow: 0 18px 44px rgba(0,0,0,.7), 0 0 44px rgba(180, 80, 255, .55); } }
+
+/* -- Télégramme 1933 : bandeaux collés, en-tête de compagnie -- */
+.ms-card.ms-theme-ny1933 .ms-kicker { flex-direction: column; justify-content: center; gap: 2px; font-size: 1.5rem; color: #2a2214; letter-spacing: .12em; text-transform: uppercase; border-bottom: 3px double #2a2214; padding-bottom: 6px; }
+.ms-card.ms-theme-ny1933 .ms-kicker::after { content: "Compagnie télégraphique de New York"; display: block; font: 10px "MS Typewriter", monospace; letter-spacing: .25em; color: #6d5a2e; }
+.ms-card.ms-theme-ny1933 .ms-from { margin-top: 10px; }
+.ms-card.ms-theme-ny1933 .ms-avatar { border-radius: 2px; filter: sepia(.6); border-color: #6d5a2e; }
+.ms-card.ms-theme-ny1933 .ms-body { padding: 4px 18px 14px; line-height: 1.9; text-shadow: 0 0 .5px rgba(42,34,20,.6); }
+
+/* -- Radio 1933 : formulaire de l'expédition -- */
+.ms-card.ms-theme-ant1933 .ms-kicker { font-size: .95rem; letter-spacing: .18em; text-transform: uppercase; border-bottom: 1px solid #8fa9bd; padding-bottom: 6px; }
+.ms-card.ms-theme-ant1933 .ms-kicker::after { content: "· · · — — — · · ·"; margin-left: auto; font-size: .8rem; color: #8fa9bd; letter-spacing: .1em; }
+.ms-card.ms-theme-ant1933 .ms-avatar { filter: grayscale(.6) sepia(.2) hue-rotate(170deg); }
+.ms-card.ms-theme-ant1933 .ms-body { font-size: 1.12rem; letter-spacing: .02em; }
+.ms-card.ms-theme-ant1933 .ms-body b { display: block; margin-top: 6px; text-align: right; font-family: "MS Typewriter", monospace; font-weight: normal; font-size: .78rem; letter-spacing: .12em; color: #5b7690; }
+
+/* -- SMS 2026 : notification + bulle -- */
+.ms-card.ms-theme-ny2026 { backdrop-filter: blur(16px); }
+.ms-card.ms-theme-ny2026 .ms-kicker { display: none; }
+.ms-card.ms-theme-ny2026 .ms-from { margin-top: 0; }
+.ms-card.ms-theme-ny2026 .ms-body { margin: 2px 16px 12px; padding: 9px 13px; background: #2a2a30; border-radius: 18px 18px 18px 6px; font-size: .98rem; }
+.ms-card.ms-theme-ny2026 .ms-foot button { border-radius: 999px; font-family: "MS Inter", sans-serif; font-weight: 600; }
+
+/* -- Liaison satellite 2026 -- */
+.ms-card.ms-theme-ant2026 .ms-app { color: #ff6a13; font-family: "MS Rajdhani", sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: .16em; border-bottom: 1px solid rgba(20, 33, 46, .15); padding-bottom: 6px; }
+.ms-card.ms-theme-ant2026 .ms-kicker { display: none; }
+.ms-card.ms-theme-ant2026 .ms-body { border-left: 3px solid #ff6a13; margin: 0 16px 12px; padding: 6px 10px; background: rgba(255, 106, 19, .06); }
+.ms-card.ms-theme-ant2026 .ms-foot button { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+/* =================================================================== */
+/*  Fenêtre de rédaction                                                */
+/* =================================================================== */
+
+.ms-app-window .window-content { padding: 0; background: var(--ms-bg); color: var(--ms-ink); font-family: var(--ms-font); }
+.ms-app-window .window-header { background: rgba(0,0,0,.35); }
+.ms-compose { display: flex; flex-direction: column; gap: 10px; padding: 14px; position: relative; }
+.ms-compose-head { font-family: var(--ms-head-font); color: var(--ms-accent); font-size: 1.15rem; display: flex; align-items: center; gap: 8px; }
+.ms-theme-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.ms-theme-row label { display: flex; align-items: center; gap: 6px; flex: 1; color: var(--ms-muted); }
+.ms-theme-row select { flex: 1; }
+.ms-to { margin: 0; border: 1px solid color-mix(in srgb, var(--ms-ink) 18%, transparent); border-radius: 8px; padding: 6px 10px 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.ms-to legend { padding: 0 4px; color: var(--ms-muted); display: flex; gap: 8px; align-items: center; font-size: .85rem; }
+.ms-all { height: 22px; line-height: 20px; padding: 0 8px; font-size: .75rem; width: auto; }
+.ms-rcpt { cursor: pointer; }
+.ms-rcpt input { display: none; }
+.ms-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--c) 60%, transparent); color: var(--ms-ink); opacity: .65; transition: all .15s; font-size: .9rem; }
+.ms-chip i { color: var(--c); }
+.ms-chip small { color: var(--ms-muted); }
+.ms-rcpt input:checked + .ms-chip { opacity: 1; background: color-mix(in srgb, var(--c) 28%, transparent); box-shadow: 0 0 0 1px var(--c) inset; }
+.ms-rcpt.offline .ms-chip { border-style: dashed; }
+.ms-compose textarea { min-height: 110px; resize: vertical; font-family: var(--ms-font); font-size: 1rem; color: var(--ms-ink); background: color-mix(in srgb, var(--ms-ink) 7%, transparent); border: 1px solid color-mix(in srgb, var(--ms-ink) 25%, transparent); border-radius: 8px; padding: 8px 10px; }
+.ms-hint, .ms-empty { margin: 0; font-size: .78rem; color: var(--ms-muted); }
+.ms-compose-foot { display: flex; justify-content: flex-end; }
+.ms-compose-foot button { height: 36px; padding: 0 18px; font-size: .95rem; }
+
+/* =================================================================== */
+/*  Dans le chat                                                        */
+/* =================================================================== */
+
+.ms-chat { margin: 2px 0; padding: 8px 10px; border-radius: 8px; background: var(--ms-bg); border: var(--ms-border); color: var(--ms-ink); font-family: var(--ms-font); }
+.ms-chat p { margin: 4px 0 0; }
+.ms-chat-head { font-family: var(--ms-head-font); color: var(--ms-accent); font-size: .85rem; letter-spacing: .04em; }
+.ms-chat-btn { margin-right: 4px; }

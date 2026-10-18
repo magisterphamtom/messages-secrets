@@ -1,0 +1,20 @@
+{
+  "id": "messages-secrets",
+  "title": "Messages secrets",
+  "description": "Messages privés entre joueurs et Gardien / MJ sans commande à taper : un bouton, des destinataires à cocher, une carte bien visible à la réception avec bouton Répondre. Chaque message reste dans le chat comme chuchotement. Six habillages : générique, Outreterre (drow), New York 1933 (télégramme), Antarctique 1933 (message radio), New York 2026 (SMS), Antarctique 2026 (liaison satellite), avec un mode automatique qui suit la Bascule d'époque.",
+  "version": "1.0.0",
+  "authors": [{ "name": "magisterphamtom", "url": "https://github.com/magisterphamtom" }],
+  "compatibility": { "minimum": "13", "verified": "14.368" },
+  "relationships": {
+    "recommends": [{ "id": "coc7-bascule-epoque", "type": "module", "reason": "L'habillage automatique suit l'époque en cours (1933 / 2026)." }]
+  },
+  "esmodules": ["scripts/main.js"],
+  "styles": ["styles/messages.css"],
+  "url": "https://github.com/magisterphamtom/messages-secrets",
+  "manifest": "https://github.com/magisterphamtom/messages-secrets/releases/latest/download/module.json",
+  "download": "https://github.com/magisterphamtom/messages-secrets/releases/download/v1.0.0/module.zip",
+  "bugs": "https://github.com/magisterphamtom/messages-secrets/issues",
+  "readme": "https://github.com/magisterphamtom/messages-secrets/blob/main/README.md",
+  "license": "https://github.com/magisterphamtom/messages-secrets/blob/main/LICENSE",
+  "media": [{ "type": "cover", "url": "https://raw.githubusercontent.com/magisterphamtom/messages-secrets/main/.github/banner.png" }]
+}

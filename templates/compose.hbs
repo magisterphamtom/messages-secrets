@@ -1,0 +1,45 @@
+<div class="ms-compose">
+  <header class="ms-compose-head">
+    <i class="{{T.icon}}"></i>
+    <span>{{#if replying}}Réponse{{else}}{{#if isGM}}{{T.title}}{{else}}{{T.toGm}}{{/if}}{{/if}}</span>
+  </header>
+
+  {{#if themes}}
+  <div class="ms-theme-row">
+    <label><i class="fa-solid fa-palette"></i>
+      <select name="theme">
+        {{#each themes}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </label>
+    {{#if showPlace}}
+    <label><i class="fa-solid fa-location-dot"></i>
+      <select name="place">
+        <option value="newyork" {{#if (eq place "newyork")}}selected{{/if}}>New York</option>
+        <option value="antarctique" {{#if (eq place "antarctique")}}selected{{/if}}>Antarctique</option>
+      </select>
+    </label>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  <fieldset class="ms-to">
+    <legend>Destinataire{{#if isGM}}s{{/if}}
+      {{#if isGM}}<button type="button" class="ms-all" data-action="all">Tous / aucun</button>{{/if}}
+    </legend>
+    {{#each recipients}}
+      <label class="ms-rcpt {{#unless online}}offline{{/unless}}" style="--c: {{color}}">
+        <input type="checkbox" name="to" value="{{id}}" {{#if checked}}checked{{/if}}>
+        <span class="ms-chip"><i class="fa-solid {{#if gm}}fa-eye{{else}}fa-user{{/if}}"></i> {{name}}{{#if sub}} <small>{{sub}}</small>{{/if}}</span>
+      </label>
+    {{else}}
+      <p class="ms-empty">Aucun joueur pour l'instant.</p>
+    {{/each}}
+  </fieldset>
+
+  <textarea name="text" rows="5" placeholder="Votre message…"></textarea>
+  <p class="ms-hint">Ctrl + Entrée pour envoyer. {{#if isGM}}Seuls les destinataires le verront.{{else}}Seuls les destinataires et {{gmLabel}} le verront.{{/if}}</p>
+
+  <footer class="ms-compose-foot">
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> {{T.send}}</button>
+  </footer>
+</div>

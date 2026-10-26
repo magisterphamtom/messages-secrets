@@ -39,3 +39,9 @@ game.modules.get("messages-secrets")?.api.addToHotbar();
 Polices sous SIL Open Font License : Inter, Rajdhani, Special Elite, IM Fell English, Limelight, Cinzel, EB Garamond. Code sous licence MIT.
 
 > 🤖 Idées, conception et tests : magisterphamtom · code écrit avec l'assistance de l'IA Claude (Anthropic).
+
+## Aperçus
+
+<p align="center"><img src=".github/previews/messages-secrets-fenetre.png" alt="Fenêtre de messages" width="85%"></p>
+
+<p align="center"><img src=".github/previews/messages-secrets-habillages.png" alt="Habillages" width="85%"></p>
